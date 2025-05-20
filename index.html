@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation: Differences Between Inner and Outer Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Visualization & Content Choices: 
+        - Report Info: Introduction to beauty concepts. Goal: Inform. Viz/Presentation: Full-height introductory slide. Justification: Sets the stage for the presentation. Library/Method: HTML/Tailwind.
+        - Report Info: Definition and key aspects of Inner Beauty. Goal: Inform, Detail. Viz/Presentation: Dedicated section with prominent definition and bulleted list of aspects. Justification: Provides a focused "slide" for inner beauty's components. Library/Method: HTML/Tailwind.
+        - Report Info: Definition and key aspects of Outer Beauty. Goal: Inform, Detail. Viz/Presentation: Dedicated section with prominent definition and bulleted list of aspects. Justification: Provides a focused "slide" for outer beauty's components, parallel to inner beauty. Library/Method: HTML/Tailwind.
+        - Report Info: Differences between Inner and Outer Beauty. Goal: Compare, Highlight Differences. Viz/Presentation: Dedicated section with a two-column layout (or responsive stacking) to directly contrast aspects. Justification: Directly addresses the user's request for "differences" in a clear, comparative format. Library/Method: HTML/Tailwind.
+        - Report Info: Conclusion on the interplay of inner and outer beauty. Goal: Synthesize, Conclude. Viz/Presentation: Final section summarizing the holistic view. Justification: Provides a comprehensive conclusion. Library/Method: HTML/Tailwind.
+        - No quantitative data is present, so Chart.js/Plotly.js are not used for data visualizations. The focus is on clear textual presentation and comparative layout.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5DC; /* Light Beige */
+            color: #333333; /* Dark Gray */
+            scroll-behavior: smooth; /* Smooth scrolling between sections */
+        }
+        h1, h2, h3 {
+            color: #487E7E; /* Muted Teal for headers */
+        }
+        .presentation-slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        .slide-intro {
+            background-color: #EBF4F5; /* Light Gray-Blue */
+            background-image: linear-gradient(to bottom, #EBF4F5, #C0DEDF); /* Subtle gradient */
+        }
+        .slide-content-section {
+            background-color: #FFFFFF;
+        }
+        .slide-comparison-section {
+            background-color: #F8F8F0; /* Slightly different light beige */
+        }
+        .slide-conclusion-section {
+            background-color: #EBF4F5; /* Light Gray-Blue */
+            box-shadow: none;
+        }
+        .aspect-list {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px; /* Constrain list width */
+        }
+        .aspect-list li {
+            margin-bottom: 8px;
+        }
+        .comparison-item {
+            background-color: #FFFFFF;
+            border: 1px solid #C0DEDF;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <div class="relative">
+        <section class="presentation-slide slide-intro">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-6xl md:text-7xl font-extrabold mb-4 text-teal-700 drop-shadow-lg">
+                    Inner vs. Outer Beauty
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                    
+                </p>
+            </div>
+        </section>
+
+        <section class="presentation-slide slide-content-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 text-teal-700">Inner Beauty: The Essence Within</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Inner beauty refers to the qualities that make a person appealing from within. These are traits that are not visible to the eye but are experienced through interaction and observation of a person's character and actions. It is often considered more enduring and impactful than outer beauty.
+                </p>
+                <h3 class="text-3xl font-semibold mb-6 text-teal-600">Key Aspects of Inner Beauty:</h3>
+                <ul class="aspect-list text-lg text-gray-700">
+                    <li><strong>Kindness and Compassion:</strong> Genuine concern for others' well-being.</li>
+                    <li><strong>Integrity and Honesty:</strong> Adhering to strong moral principles and truthfulness.</li>
+                    <li><strong>Confidence and Self-Acceptance:</strong> Belief in self, accepting flaws.</li>
+                    <li><strong>Intelligence and Wisdom:</strong> Ability to learn, understand, and apply knowledge.</li>
+                    <li><strong>Resilience:</strong> Bouncing back from adversity and adapting to change.</li>
+                    <li><strong>Positive Attitude:</strong> Optimistic outlook, finding joy and gratitude.</li>
+                    <li><strong>Humility:</strong> Modest view of self, valuing others, openness to learning.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="presentation-slide slide-content-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 text-teal-700">Outer Beauty: The Visible Expression</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Outer beauty pertains to a person's physical appearance. It encompasses features that are perceived visually and can be influenced by genetics, lifestyle, and personal care. While often associated with societal standards, true outer beauty is also about self-expression and feeling comfortable in one's own skin.
+                </p>
+                <h3 class="text-3xl font-semibold mb-6 text-teal-600">Key Aspects of Outer Beauty:</h3>
+                <ul class="aspect-list text-lg text-gray-700">
+                    <li><strong>Physical Features:</strong> Facial symmetry, skin complexion, hair, body shape (influenced by genetics).</li>
+                    <li><strong>Grooming and Presentation:</strong> Personal hygiene, well-maintained appearance, appropriate dressing.</li>
+                    <li><strong>Health and Vitality:</strong> Healthy glow, clear eyes, energetic demeanor.</li>
+                    <li><strong>Personal Style:</strong> Individual expression through clothing and adornment.</li>
+                    <li><strong>Expression and Demeanor:</strong> Pleasant smile, confident posture, engaging eye contact.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="presentation-slide slide-comparison-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-bold mb-12 text-teal-700">Key Differences</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
+                    <div class="comparison-item">
+                        <h3 class="text-3xl font-semibold mb-4 text-teal-600">Inner Beauty</h3>
+                        <ul class="list-disc pl-5 space-y-3 text-lg text-gray-700">
+                            <li><strong>Nature:</strong> Intangible, character-based.</li>
+                            <li><strong>Perception:</strong> Experienced through interaction and behavior.</li>
+                            <li><strong>Duration:</strong> Enduring and long-lasting.</li>
+                            <li><strong>Cultivation:</strong> Developed through self-reflection, personal growth, conscious effort.</li>
+                            <li><strong>Value:</strong> Often considered more impactful and profound.</li>
+                            <li><strong>Visibility:</strong> Not directly visible; revealed over time.</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h3 class="text-3xl font-semibold mb-4 text-teal-600">Outer Beauty</h3>
+                        <ul class="list-disc pl-5 space-y-3 text-lg text-gray-700">
+                            <li><strong>Nature:</strong> Tangible, physical appearance-based.</li>
+                            <li><strong>Perception:</strong> Perceived visually.</li>
+                            <li><strong>Duration:</strong> Can change with age, lifestyle, trends.</li>
+                            <li><strong>Cultivation:</strong> Enhanced through genetics, lifestyle choices, personal care, fashion.</li>
+                            <li><strong>Value:</strong> Often associated with societal standards, but also self-expression.</li>
+                            <li><strong>Visibility:</strong> Readily apparent; immediately noticeable.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-6 border-t border-gray-300 bg-white text-gray-600">
+            <p>&copy; <span id="currentYear"></span> Inner vs. Outer Beauty. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
